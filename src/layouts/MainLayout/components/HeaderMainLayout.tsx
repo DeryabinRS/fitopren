@@ -1,17 +1,11 @@
-import {  Menu, Radio, Space } from "antd";
+import {  Button, Menu, Space } from "antd";
 import { useTranslation } from 'react-i18next';
 import { Grid } from 'antd';
 
 import Logo from '@/assets/images/logo.png';
-const { useBreakpoint } = Grid;
+import { headerMenuItems } from "@/config/constants";
 
-const items = [
-    { key: 1, label: 'Каталог' },
-    { key: 2, label: 'Акции' },
-    { key: 3, label: 'Доставка и Оплата' },
-    { key: 4, label: 'Услуги' },
-    { key: 5, label: 'Контакты' },
-];
+const { useBreakpoint } = Grid;
 
 const HeaderMainLayout = () => {
   	const { i18n } = useTranslation();
@@ -20,6 +14,8 @@ const HeaderMainLayout = () => {
 	const changeLanguage = (lng: string) => {
 		i18n.changeLanguage(lng);
 	};
+
+	const menuItems = headerMenuItems.map(item => ({ ...item, label: item.label[i18n.language as keyof typeof item.label] }));
 
 	return (
 		<div style={{
@@ -47,14 +43,12 @@ const HeaderMainLayout = () => {
 				theme="light"
 				mode="horizontal"
 				defaultSelectedKeys={['2']}
-				items={items}
+				items={menuItems}
 				style={{ flex: 1, minWidth: 0 }}
 			/>
 			<Space>
-				<Radio.Group size="small" value={i18n.language} onChange={(e) => changeLanguage(e.target.value)}>
-					<Radio.Button value="ru">ru</Radio.Button>
-					<Radio.Button value="en">en</Radio.Button>
-				</Radio.Group>
+				<Button type="link" size="small" onClick={() => changeLanguage('ru')}>RU</Button>
+				<Button type="link" size="small" onClick={() => changeLanguage('en')}>EN</Button>
 			</Space>
 		</div>
 	)
