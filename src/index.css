@@ -1,0 +1,10 @@
+/* scrollbar для Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  /* доп. настройки scrollbar для Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #80bf44 transparent;
+  }

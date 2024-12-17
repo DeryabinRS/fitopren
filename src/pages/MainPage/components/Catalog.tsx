@@ -12,7 +12,12 @@ export const Catalog = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const itemMenu = headerMenuItems[0];
     return (
-        <div style={{ position: 'relative', background: 'linear-gradient(-45deg, rgba(242,150,81, 0.3) 10%, rgb(83, 157, 45, 0.3) 20%, transparent)' }} >
+        <div 
+            style={{ 
+            position: 'relative', 
+            background: 'linear-gradient(110deg, transparent 0%, transparent 10%, rgba(242,150,81, 0.5) 20%, rgba(242,150,81, 0.5) 30%, rgb(83, 157, 45, 0.5) 30%, rgb(83, 157, 45, 0.7) 50%, transparent 40%)' 
+            }} 
+        >
             <div style={{ 
                 width: '100%',
                 maxWidth: 1300,
@@ -28,7 +33,7 @@ export const Catalog = () => {
                         marginBottom: 30,
                     }}
                 >
-                    <h2 style={{ textTransform: 'uppercase' }}>
+                    <h2 id={itemMenu.url} style={{ textTransform: 'uppercase' }}>
                         {itemMenu.label[i18n.language as keyof typeof itemMenu.label]}
                     </h2>
                 </div>
@@ -83,7 +88,7 @@ const ProductPageInModal:FC<{product: TProduct}> = ({ product }) => {
         <>
             <Card
                 hoverable
-                cover={<img alt="example" src={`/img/products/${product.img}`} />}
+                cover={<img alt="example" src={`/img/products/${product.img}`} style={{ height: 290, objectFit: 'cover' }} />}
                 style={{ height: '100%' }}
                 onClick={showModal}
             >

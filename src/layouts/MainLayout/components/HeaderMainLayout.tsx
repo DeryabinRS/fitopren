@@ -15,7 +15,11 @@ const HeaderMainLayout = () => {
 		i18n.changeLanguage(lng);
 	};
 
-	const menuItems = headerMenuItems.map(item => ({ ...item, label: item.label[i18n.language as keyof typeof item.label] }));
+	const menuItems = headerMenuItems.map(item => ({ 
+		...item, 
+		label: item.label[i18n.language as keyof typeof item.label],
+		ref: <a href="/page">123</a>
+	}));
 
 	return (
 		<div style={{
@@ -42,10 +46,15 @@ const HeaderMainLayout = () => {
 			<Menu
 				theme="light"
 				mode="horizontal"
-				defaultSelectedKeys={['2']}
-				items={menuItems}
 				style={{ flex: 1, minWidth: 0 }}
-			/>
+				selectable={false}
+			>
+				{menuItems.map(menuItem => (
+					<Menu.Item>
+						<a href={`#${menuItem.url}`}>{menuItem.label}</a>
+					</Menu.Item>
+				))}
+			</Menu>
 			<Space>
 				<Button type="link" size="small" onClick={() => changeLanguage('ru')}>RU</Button>
 				<Button type="link" size="small" onClick={() => changeLanguage('en')}>EN</Button>
