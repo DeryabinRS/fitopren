@@ -20,24 +20,20 @@ body {
   overflow: hidden;
 
   /*ANIMATION*/
-  .animation_bubble {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
   .animation_bubble li {
     position: absolute;
     display: block;
     list-style: none;
-    width: 30px;
-    height: 30px;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 100%;
     bottom: 0px;
+    box-shadow: 0 0 10px #ffffff;
   }
   @keyframes animation_bubble {
     0% {
+      opacity: 0;
+    }
+    10% {
       opacity: 1;
     }
     100% {

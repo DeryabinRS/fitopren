@@ -45,7 +45,7 @@ export const Catalog = () => {
                                 xs={{ flex: '100%' }}
                                 sm={{ flex: '50%' }}
                                 md={{ flex: '33.3333%' }}
-                                lg={{ flex: '25%' }}
+                                lg={{ flex: '20%' }}
                             >
                                 <ProductPageInModal product={product} />
                             </Col>
@@ -88,11 +88,11 @@ const ProductPageInModal:FC<{product: TProduct}> = ({ product }) => {
         <>
             <Card
                 hoverable
-                cover={<img alt="example" src={`/img/products/${product.img}`} style={{ height: 290, objectFit: 'cover' }} />}
+                cover={<img alt="example" src={`/img/products/${product.img}`} style={{ height: 270, objectFit: 'cover' }} />}
                 style={{ height: '100%' }}
                 onClick={showModal}
             >
-                <b style={{ fontSize: 16 }}>{product.name}</b>
+                <div style={{ margin: -10 }}><span style={{ fontSize: 14, fontWeight: 600 }}>{product.name}</span></div>
             </Card>
             
             <Modal 

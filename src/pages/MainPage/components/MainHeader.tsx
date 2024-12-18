@@ -13,16 +13,16 @@ export const MainHeader = () => {
             <ul className="animation_bubble">
                 {[...Array(50)]
                     .map((_, i) => {
-                        const wh = `${Math.floor(Math.random() * (30 - 10 + 1) + 10)}px`;
+                        const wh = `${Math.floor(Math.random() * (30 - 10 + 1) + 5)}px`;
                         return (
                             <li
                                 key={i}
                                 style={{
+                                    top: `${Math.floor(Math.random() * (100) + 0)}%`,
                                     left: `${Math.floor(Math.random() * (100 - 5 + 1) + 0)}%`,
                                     width: wh,
                                     height: wh,
                                     animationIterationCount: 'infinite',
-                                    // animationDuration: `${Math.random() * (8 - 4 + 1) + 15}s`,
                                     animation: `animation_bubble ${Math.random() * (28 - 14 + 1) + 20}s linear infinite`,
                                 }}
                             ></li>

@@ -1,4 +1,5 @@
 import { Catalog } from './components/Catalog';
+import Contacts from './components/Contacts';
 import Delivery from './components/Delivery';
 import { MainHeader } from './components/MainHeader';
 
@@ -9,6 +10,7 @@ const MainPage = () => {
             <MainHeader />
             <Catalog />
             <Delivery />
+            <Contacts />
         </>
     )
 }

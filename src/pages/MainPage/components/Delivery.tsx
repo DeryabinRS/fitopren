@@ -21,7 +21,7 @@ const Delivery = () => {
                         marginBottom: 30,
                     }}
                 >
-                    <h2>
+                    <h2 id={itemMenu.url}>
                         {itemMenu.label[i18n.language as keyof typeof itemMenu.label]}
                     </h2>
                 </div>
