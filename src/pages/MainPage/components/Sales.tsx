@@ -1,13 +1,11 @@
-import { headerMenuItems } from "@/config/constants";
 import { useTranslation } from "react-i18next";
+import { headerMenuItems } from "@/config/constants";
 
-const Delivery = () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const itemMenu = headerMenuItems[2];
+const Sales = () => {
+    const itemMenu = headerMenuItems[1];
     const { i18n } = useTranslation();
-
     return (
-        <>
+        <div>
             <div style={{ 
                 width: '100%',
                 maxWidth: 1300,
@@ -23,9 +21,12 @@ const Delivery = () => {
                         {itemMenu.label[i18n.language as keyof typeof itemMenu.label]}
                     </h2>
                 </div>
+                <div>
+
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 
-export default Delivery
+export default Sales

@@ -13,7 +13,7 @@ export const MainHeader = () => {
             <ul className="animation_bubble">
                 {[...Array(50)]
                     .map((_, i) => {
-                        const wh = `${Math.floor(Math.random() * (30 - 10 + 1) + 5)}px`;
+                        const wh = `${Math.floor(Math.random() * (30 - 10 + 1) + 3)}px`;
                         return (
                             <li
                                 key={i}
@@ -64,7 +64,7 @@ export const MainHeader = () => {
                                     padding: '20px 30px',
                                     letterSpacing: 4,
                                     background: 'rgba(0, 0, 0, 0.5)',
-                                    borderRadius: '5px 0 0 5px',
+                                    borderRadius: '15px',
                                 }}
                             >
                                 <div>

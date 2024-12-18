@@ -1,4 +1,5 @@
 $green-1: #539d2d;
+$orange-1: #f29651;
 
 body {
   margin: 0;
@@ -8,8 +9,12 @@ body {
   background: $green-1;
 }
 
+.bg-orange-1 {
+  background: $orange-1;
+}
+
 .bg-gragient-1 {
-  background: linear-gradient(110deg, rgba(242,150,81) 0%, rgba(242,150,81) 45%, $green-1 45%, #539d2d 70%, transparent 99%);
+  background: linear-gradient(110deg, $orange-1 0%, $orange-1 45%, $green-1 45%, $green-1 70%, transparent 99%);
 }
 
 .main-header{
