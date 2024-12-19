@@ -1,29 +1,86 @@
-import { headerMenuItems } from "@/config/constants";
 import { useTranslation } from "react-i18next";
+import { Col, Grid, Row } from "antd";
+
+import DeliveryImg from '@/assets/images/delivery.png';
+import { headerMenuItems } from "@/config/constants";
+
+const { useBreakpoint } = Grid;
 
 const Delivery = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const itemMenu = headerMenuItems[2];
     const { i18n } = useTranslation();
+    const screens = useBreakpoint();
 
     return (
         <>
-            <div style={{ 
-                width: '100%',
-                maxWidth: 1300,
-                margin: '0 auto',
-                padding: '0 20px',
-            }}>
-                <div 
-                    style={{
-                        padding: '20px 30px',
-                    }}
-                >
-                    <h2 id={itemMenu.url} style={{ textTransform: 'uppercase' }}>
-                        {itemMenu.label[i18n.language as keyof typeof itemMenu.label]}
-                    </h2>
+            <div 
+                style={{ 
+                    background: 'linear-gradient(153deg, transparent 0%, transparent 50%, rgba(242, 150, 81, 0.5) 60%, rgba(83, 157, 45, 0.5) 60%, transparent 100%)' 
+                }}
+            >
+                <div style={{ 
+                    width: '100%',
+                    maxWidth: 1300,
+                    margin: '0 auto',
+                    padding: '0 20px',
+                }}>
+                    <div 
+                        style={{
+                            padding: '20px 30px 0',
+                        }}
+                    >
+                        <h2 id={itemMenu.url} style={{ textTransform: 'uppercase' }}>
+                            {itemMenu.label[i18n.language as keyof typeof itemMenu.label]}
+                        </h2>
+                        <Row gutter={16}>
+                            <Col
+                                md={{ flex: '100%' }}
+                                lg={{ flex: '50%' }}
+                                style={{ fontSize: 15, paddingBottom: 50 }}
+                            >
+                                <h3>Варианты доставки</h3>
+                                <p>При оформлении заказа Покупатель может выбрать доставку из представленных вариантов:</p>
+                                <ul>
+
+                                <li>Самовывоз из пункта выдачи ТК СДЭК, ТК ПЭК  или ТК Энергия.</li>
+                                <li>Курьерская доставка по одному из имеющихся тарифов (ТК СДЭК, ТК ПЭК, ТК Энергия).<b>*</b></li>
+                                <li>Самовывоз  со склада в г.Новосибирск.</li>
+                                </ul>
+                                <p>Все правила работы Транспортных компаний указаны на сайтах указанных компаний.</p>
+
+                                <h4><b>*</b>Курьерская доставка</h4>
+                                <p>При необходимости можно оформить доставку заказа курьером до двери. Покупатель может выбрать курьерскую доставку от ТК Энергия, ТК СДЭК или ТК ПЭК в зависимости от индивидуальных предпочтений, стоимости  и времени доставки.</p>
+                                {/* <p>Срок курьерской доставки, как правило, на 1-2 дня может быть дольше чем доставка до пункта выдачи/Почтового  отделения. Это связано с тем, что посылка попадает на участок курьерской доставки и подлежит распределению для вручения. В зависимости от загруженности курьеров,  посылка может быть доставлена  после дня поступления  в участок доставки.</p> */}
+                                {/* <p>Необходимо также учитывать факт, что в виду  наличия определенного  маршрута у курьера и непредвиденных ситуаций курьер не может гарантировать доставку заказа к определнному времени.  Пожелание клиента может быть принято во внимание и исполнено курьером при наличии соответствующей возможности. Покупатель должен быть готов к тому, что ему необходимо быть на адресе доставки в течение всего дня, на который назначена доставка заказа.</p> */}
+                                <p>Доступность курьерской доставки определяется по адресу. Уточнить возможна ли доставка курьером в вашем городе можно у оператора  или увидеть на  странице оформления заказа при расчете вариантов доставки. </p>
+
+
+                                <h3>Интернет-банкинг и оплата по счету</h3>
+                                <p>Заказ можно оплатить по выставленному счету переводом по банковским реквизитам, либо по реквизитам корпоративной карты.</p>
+                                <p>По оплатам с р/сч юридического лица и ИП в случае необходимости предоставления закрывающих докмуентов, просьба указывать данную информацию комментарием к заказу или написать на электронную почту - <b>larix-pacific@inbox.ru</b></p>
+
+                            </Col>
+                            <Col
+                                md={{ flex: '100%' }}
+                                lg={{ flex: '50%' }}
+                            >
+                                <img 
+                                    src={DeliveryImg} 
+                                    alt="DeliveryMan" 
+                                    style={{ 
+                                        width: '100%', 
+                                        position: screens.lg ? 'absolute' : 'relative', 
+                                        filter: 'drop-shadow(3px 5px 20px #888)',
+                                        bottom: 0,
+                                    }}
+                                />
+                            </Col>
+                        </Row>
+                    </div>
                 </div>
             </div>
+            <div className="bg-green-1" style={{ height: 50 }}></div>
         </>
     )
 }

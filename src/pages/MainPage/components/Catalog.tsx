@@ -53,6 +53,7 @@ export const Catalog = () => {
                     </Row>
                 </div>
             </div>
+            <div className="bg-orange-1" style={{ height: 50 }}></div>
         </div>
     )
 }

@@ -22,6 +22,7 @@ export const MainHeader = () => {
                                     left: `${Math.floor(Math.random() * (100 - 5 + 1) + 0)}%`,
                                     width: wh,
                                     height: wh,
+                                    opacity: 0.5,
                                     animationIterationCount: 'infinite',
                                     animation: `animation_bubble ${Math.random() * (28 - 14 + 1) + 20}s linear infinite`,
                                 }}

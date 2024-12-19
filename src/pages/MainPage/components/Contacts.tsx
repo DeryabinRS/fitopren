@@ -60,6 +60,7 @@ const Contacts = () => {
                             hidden={!screens.lg}
                         >
                             <div
+                                className="contacts-arrow"
                                 style={{
                                     clipPath: 'polygon(10% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%)',
                                     height: '100%',

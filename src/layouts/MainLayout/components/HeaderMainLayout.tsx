@@ -50,7 +50,7 @@ const HeaderMainLayout = () => {
 				selectable={false}
 			>
 				{menuItems.map(menuItem => (
-					<Menu.Item>
+					<Menu.Item key={menuItem.key}>
 						<a href={`#${menuItem.url}`}>{menuItem.label}</a>
 					</Menu.Item>
 				))}

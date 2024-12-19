@@ -39,7 +39,7 @@ body {
       opacity: 0;
     }
     10% {
-      opacity: 1;
+      opacity: 0.8;
     }
     100% {
       transform: translateY(-900px);
@@ -52,17 +52,26 @@ body {
   padding: 20px 0;
 }
 
+.contacts-arrow {
+  animation: ticker 1s linear infinite alternate, 
+}
+
 @keyframes pulse {
-  from {background-size: 115%; background-position: bottom;}
-  50% {background-size: 140%; background-position: -300px 0px}
-  75%{background-size: 135%; background-position: -200px 0px}
-  to {background-size: 115%; background-position: bottom;}
+  from { background-size: 115%; background-position: bottom; }
+  50% { background-size: 140%; background-position: -300px 0px }
+  75%{ background-size: 135%; background-position: -200px 0px }
+  to { background-size: 115%; background-position: bottom; }
 }
 @media all and (min-width: 1600px){
-  .main-header{animation: pulse 40s infinite ease-in-out;}
+  .main-header{ animation: pulse 40s infinite ease-in-out; }
   /*.user_card{display:flex;}*/
 }
 @media all and (max-width: 1599px){
-  .main-header{background-size: cover;}
+  .main-header{ background-size: cover; }
   /*.user_card{display: none;}*/
+}
+
+@keyframes ticker {
+  from { margin-left: -25px; }
+  to { margin-left: 0; }
 }
