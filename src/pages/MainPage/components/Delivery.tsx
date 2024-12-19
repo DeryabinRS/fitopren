@@ -27,12 +27,20 @@ const Delivery = () => {
                 }}>
                     <div 
                         style={{
-                            padding: '20px 30px 0',
+                            padding: '0px 30px 0',
                         }}
                     >
-                        <h2 id={itemMenu.url} style={{ textTransform: 'uppercase' }}>
-                            {itemMenu.label[i18n.language as keyof typeof itemMenu.label]}
-                        </h2>
+                        <div 
+                            className="bg-gragient-2"
+                            style={{
+                                padding: '20px 30px', 
+                                color: 'white',
+                            }}
+                        >
+                            <h2 id={itemMenu.url} style={{ textTransform: 'uppercase' }}>
+                                {itemMenu.label[i18n.language as keyof typeof itemMenu.label]}
+                            </h2>
+                        </div>
                         <Row gutter={16}>
                             <Col
                                 md={{ flex: '100%' }}
