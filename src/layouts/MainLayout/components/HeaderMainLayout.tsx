@@ -1,4 +1,4 @@
-import {  Button, Menu, Space } from "antd";
+import {  Button, Menu, MenuProps, Space } from "antd";
 import { useTranslation } from 'react-i18next';
 import { Grid } from 'antd';
 
@@ -15,10 +15,9 @@ const HeaderMainLayout = () => {
 		i18n.changeLanguage(lng);
 	};
 
-	const menuItems = headerMenuItems.map(item => ({ 
+	const menuItems:MenuProps['items'] = headerMenuItems.map(item => ({ 
 		...item, 
-		label: item.label[i18n.language as keyof typeof item.label],
-		ref: <a href="/page">123</a>
+		label: <a href={`#${item.url}`}>{item.label[i18n.language as keyof typeof item.label]}</a>,
 	}));
 
 	return (
@@ -48,13 +47,8 @@ const HeaderMainLayout = () => {
 				mode="horizontal"
 				style={{ flex: 1, minWidth: 0 }}
 				selectable={false}
-			>
-				{menuItems.map(menuItem => (
-					<Menu.Item key={menuItem.key}>
-						<a href={`#${menuItem.url}`}>{menuItem.label}</a>
-					</Menu.Item>
-				))}
-			</Menu>
+				items={menuItems}
+			/>
 			<Space>
 				<Button type="link" size="small" onClick={() => changeLanguage('ru')}>RU</Button>
 				<Button type="link" size="small" onClick={() => changeLanguage('en')}>EN</Button>

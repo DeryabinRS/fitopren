@@ -1,9 +1,10 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { Button, Card, Col, Modal, Row } from "antd";
 import { useTranslation } from "react-i18next";
 
 import products from '@/db/products.json';
 import { headerMenuItems } from "@/config/constants";
+import Product from "@/pages/Product";
 
 export type TProduct = typeof products[0];
 
@@ -60,7 +61,6 @@ export const Catalog = () => {
 
 const ProductPageInModal:FC<{product: TProduct}> = ({ product }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [ModalComponent, setModalComponent] = useState<FC<{ product: TProduct }> | null>(null);
 
     const showModal = () => {
         setIsModalOpen(true);
@@ -69,21 +69,6 @@ const ProductPageInModal:FC<{product: TProduct}> = ({ product }) => {
     const handleCancel = () => {
         setIsModalOpen(false);
     };
-
-    useEffect(() => {
-        loadModalComponent();
-    }, [product])
-
-    const loadModalComponent = async () => {
-		try {
-			/** В папке /widgets/* все файлы index должны быть одного формата (.tsx) */
-			const loadResult = await import(`../../products/Product${product.id}.tsx`);
-			setModalComponent(() => loadResult.default);
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		} catch (e) {
-			return null;
-		}
-	};
 
     return (
         <>
@@ -106,7 +91,7 @@ const ProductPageInModal:FC<{product: TProduct}> = ({ product }) => {
                 style={{ maxWidth: 1300 }}
                 width={'100%'}
             >
-                {ModalComponent ? <ModalComponent product={product}/> : 'Нет данных'}
+                <Product product={product}/>
             </Modal>
         </>
     );

@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "img": "prod_02.png",
-        "name": "Фитопрен с полипренолами",
+        "img": "ekstraktbee.png",
+        "name": "Экстракт пчелы медоносной «Актру»",
         "component": "Product1"
     }, 
     {
@@ -19,19 +19,19 @@
     }, 
     {
         "id": 4,
-        "img": "prod_02.png",
-        "name": "Фитопрен с фитостеринами",
+        "img": "threeoil.png",
+        "name": "Масло тополино осиновое",
         "component": "Product4"
     },
     {
         "id": 5,
-        "img": "prod_01.png",
-        "name": "Фитопрен с маслом лимонника китайского полученный Углекислотной экстракцией",
+        "img": "theecream.png",
+        "name": "Крем из почек тополя",
         "component": "Product5"
     },
     {
         "id": 6,
-        "img": "prod_06.png",
+        "img": "chaga.png",
         "name": "Экстракт берёзового гриба чага",
         "component": "Product6"
     },
@@ -58,5 +58,11 @@
         "img": "b27pr.jpg",
         "name": "Облепиховое масло извлечённое СО2 (углекислотным) способом с Тиофан М",
         "component": "Product10"
+    },
+    {
+        "id": 11,
+        "img": "lariks400.png",
+        "name": "Ларикс в капсулах по 400 млгр.",
+        "component": "Product11"
     }
 ]

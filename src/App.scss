@@ -21,6 +21,14 @@ body {
   background: linear-gradient(110deg, $green-1 0%, $green-1 45%, $orange-1 45%, $orange-1 70%, transparent 95%);
 }
 
+h4 {
+  margin: 6px 0;
+}
+
+p {
+  margin: 4px 0;
+}
+
 .main-header{
   background:  linear-gradient(110deg, rgba(55, 65, 81, 0) 0%, rgba(242,150,81,0.8) 45%, rgb(0, 0, 0, 0.2) 45%), url("./assets/images/fon.jpg"); 
   transition: all 0.1s ease; 
