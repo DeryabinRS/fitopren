@@ -35,7 +35,7 @@ export const MainHeader = () => {
                 maxWidth: 1300,
                 margin: '0 auto',
             }}>
-                <Row style={{ paddingTop: 50 }}>
+                <Row style={{ paddingTop: screens.lg ? 50 : 0 }}>
                     <Col
                         xs={{ flex: '100%' }}
                         sm={{ flex: '100%' }}
@@ -85,10 +85,16 @@ export const MainHeader = () => {
                         lg={{ flex: '100%' }}
                         xl={{ flex: '40%' }}
                     >
-                        <div style={{ height: 30, background: 'linear-gradient(110deg, rgba(55, 65, 81, 0) 0%, rgba(242,150,81,0.8) 45%, rgb(95 181 106 / 55%) 45%, rgb(95 181 106 / 0%) 100%)', marginTop: '150px', }} />
+                        <div 
+                            style={{ 
+                                height: 30, 
+                                background: 'linear-gradient(110deg, rgba(55, 65, 81, 0) 0%, rgba(242,150,81,0.8) 45%, rgb(95 181 106 / 55%) 45%, rgb(95 181 106 / 0%) 100%)', 
+                                marginTop: screens.lg ? 150 : 0, }} 
+                        />
                         <div style={{
                             color: 'white',
                             letterSpacing: 4,
+                            padding: 10,
                         }}>
                             <h1 style={{ fontSize: screens.sm ? 30 : 16, textAlign: 'end' }}>
                                 {t('main_page_header.title_2')}
