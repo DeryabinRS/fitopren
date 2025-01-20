@@ -16,7 +16,7 @@ export const Catalog = () => {
         <div 
             style={{ 
             position: 'relative', 
-            background: 'linear-gradient(110deg, transparent 0%, transparent 10%, rgba(242,150,81, 0.5) 20%, rgba(242,150,81, 0.5) 30%, rgb(83, 157, 45, 0.5) 30%, rgb(83, 157, 45, 0.7) 50%, transparent 40%)' 
+            background: 'linear-gradient(110deg, transparent 0%, transparent 10%, rgba(242,150,81, 0.5) 20%, rgba(242,150,81, 0.5) 30%, rgb(83, 157, 45, 0.5) 40%, rgb(83, 157, 45, 0.7) 50%, transparent 60%)' 
             }} 
         >
             <div style={{ 
@@ -75,7 +75,7 @@ const ProductPageInModal:FC<{product: TProduct}> = ({ product }) => {
             <Card
                 hoverable
                 cover={<img alt="example" src={`/img/products/${product.img}`} style={{ height: 270, objectFit: 'cover' }} />}
-                style={{ height: '100%' }}
+                style={{ height: '100%', background: '#ffffff82' }}
                 onClick={showModal}
             >
                 <div style={{ margin: -10 }}><span style={{ fontSize: 14, fontWeight: 600 }}>{product.name}</span></div>

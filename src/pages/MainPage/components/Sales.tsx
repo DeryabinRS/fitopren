@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { headerMenuItems } from "@/config/constants";
+import { Alert } from "antd";
 
 const Sales = () => {
     const itemMenu = headerMenuItems[1];
@@ -20,6 +21,7 @@ const Sales = () => {
                     <h2 id={itemMenu.url} style={{ textTransform: 'uppercase' }}>
                         {itemMenu.label[i18n.language as keyof typeof itemMenu.label]}
                     </h2>
+                    <Alert showIcon type="warning" message="На текущий момент акции отсутствуют"/>
                 </div>
                 <div>
 
