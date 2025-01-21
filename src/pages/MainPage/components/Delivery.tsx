@@ -23,7 +23,7 @@ const Delivery = () => {
                     width: '100%',
                     maxWidth: 1300,
                     margin: '0 auto',
-                    padding: '0 20px',
+                    padding: '20px 0',
                 }}>
                     <div 
                         style={{
@@ -80,7 +80,7 @@ const Delivery = () => {
                                         width: '100%', 
                                         position: screens.lg ? 'absolute' : 'relative', 
                                         filter: 'drop-shadow(3px 5px 20px #888)',
-                                        bottom: 0,
+                                        bottom: -20,
                                     }}
                                 />
                             </Col>
