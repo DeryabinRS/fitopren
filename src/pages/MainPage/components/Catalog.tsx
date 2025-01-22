@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import products from '@/db/products.json';
 import { headerMenuItems } from "@/config/constants";
-import Product from "@/pages/Product";
+import Product from "@/pages/Products";
 
 export type TProduct = typeof products[0];
 
