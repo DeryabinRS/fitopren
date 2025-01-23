@@ -3,5 +3,8 @@
         "title_1": "Your food should be your medicine and your medicine should be your food.",
         "title_1_signature": "Hippocrates",
         "title_2": "Functional nutrition is the most natural way to maintain health."
+    },
+    "errors": {
+        "language_version": "The English version of the site is under development"
     }
 }
