@@ -4,11 +4,13 @@ import { Grid } from 'antd';
 
 import Logo from '@/assets/images/logo.png';
 import { headerMenuItems } from "@/config/constants";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const { useBreakpoint } = Grid;
 
 const HeaderMainLayout = () => {
+	const { hash, key } = useLocation();
   	const { i18n } = useTranslation();
 	const screens = useBreakpoint();
 
@@ -16,9 +18,16 @@ const HeaderMainLayout = () => {
 		i18n.changeLanguage(lng);
 	};
 
+	useEffect(()=>{
+		if(hash){
+			const targetElement = document.getElementById(hash.substring(1));
+			targetElement?.scrollIntoView({behavior: 'smooth'});
+		}
+	}, [key, hash])
+
 	const menuItems:MenuProps['items'] = headerMenuItems.map(item => ({
 		...item, 
-		label: <a href={`#${item.url}`}>{item.label[i18n.language as keyof typeof item.label]}</a>,
+		label: <Link to={`/#${item.url}`}>{item.label[i18n.language as keyof typeof item.label]}</Link>,
 	})).sort(item => item.order);
 
 	return (
