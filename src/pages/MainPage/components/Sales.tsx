@@ -38,6 +38,7 @@ const Sales = () => {
 
                 </div>
             </div>
+            <div className="bg-orange-1" style={{ height: 10 }}></div>
         </div>
     )
 }

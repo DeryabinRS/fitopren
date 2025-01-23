@@ -4,6 +4,7 @@ import { Grid } from 'antd';
 
 import Logo from '@/assets/images/logo.png';
 import { headerMenuItems } from "@/config/constants";
+import { Link } from "react-router-dom";
 
 const { useBreakpoint } = Grid;
 
@@ -15,10 +16,10 @@ const HeaderMainLayout = () => {
 		i18n.changeLanguage(lng);
 	};
 
-	const menuItems:MenuProps['items'] = headerMenuItems.map(item => ({ 
+	const menuItems:MenuProps['items'] = headerMenuItems.map(item => ({
 		...item, 
 		label: <a href={`#${item.url}`}>{item.label[i18n.language as keyof typeof item.label]}</a>,
-	}));
+	})).sort(item => item.order);
 
 	return (
 		<div style={{
@@ -31,7 +32,7 @@ const HeaderMainLayout = () => {
 			gap: 10,
 			position: 'relative',
 		}}>
-			<div>
+			<Link to="/">
 				<img 
 					src={Logo}
 					className="logo"
@@ -41,7 +42,7 @@ const HeaderMainLayout = () => {
 						position: 'relative',
 					}}
 				/>
-			</div>
+			</Link>
 			<Menu
 				theme="light"
 				mode="horizontal"
@@ -50,8 +51,9 @@ const HeaderMainLayout = () => {
 				items={menuItems}
 			/>
 			<Space>
-				<Button type="link" size="small" onClick={() => changeLanguage('ru')}>RU</Button>
+				<Button type="link" size="small" onClick={() => changeLanguage('ru')}>РУС</Button>
 				<Button type="link" size="small" onClick={() => changeLanguage('en')}>EN</Button>
+				<Button type="link" size="small" onClick={() => changeLanguage('cn')}>中文</Button>
 			</Space>
 		</div>
 	)

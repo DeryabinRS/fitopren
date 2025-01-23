@@ -1,15 +1,39 @@
-import { Col, Grid, Row } from 'antd';
+import { Alert, Col, Grid, Row } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 import Hipocratus from '@/assets/images/hipocratus.png';
+import Lao from '@/assets/images/lao.png';
+
+import imageBackgroundRU from '@/assets/images/fon.jpg';
+import imageBackgroundCN from '@/assets/images/fon2.jpg';
 
 const { useBreakpoint } = Grid;
 
 export const MainHeader = () => {
-    const { t } = useTranslation();
+    const { i18n, t } = useTranslation();
     const screens = useBreakpoint();
+
+    let currentBackground = imageBackgroundRU;
+
+    switch(i18n.language) {
+        case 'ru': 
+            currentBackground = imageBackgroundRU;
+            break;
+        case 'en': 
+            currentBackground = imageBackgroundRU;
+            break;
+        case 'cn': 
+            currentBackground = imageBackgroundCN;
+            break;
+    }
+
     return (
-        <div className="main-header">
+        <div 
+            className="main-header"
+            style={{
+                background: `linear-gradient(110deg, rgba(55, 65, 81, 0) 0%, rgba(242,150,81,0.8) 45%, rgb(0, 0, 0, 0.2) 45%), url(${currentBackground})`,
+            }}
+        >
             <ul className="animation_bubble">
                 {[...Array(50)]
                     .map((_, i) => {
@@ -49,7 +73,7 @@ export const MainHeader = () => {
                         }}>
                             <div>
                                 <img 
-                                    src={Hipocratus} 
+                                    src={i18n.language === 'cn' ? Lao : Hipocratus} 
                                     alt="Hipocratus"
                                     width={screens.sm ? 400 : 220}
                                     style={{
@@ -85,6 +109,11 @@ export const MainHeader = () => {
                         lg={{ flex: '100%' }}
                         xl={{ flex: '40%' }}
                     >
+                        <div>
+                            {i18n.language !== 'ru' && (
+                                <Alert type="warning" message={t('errors.language_version')} />
+                            )}
+                        </div>
                         <div 
                             style={{ 
                                 height: 30, 

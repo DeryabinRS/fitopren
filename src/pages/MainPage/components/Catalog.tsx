@@ -2,11 +2,11 @@ import { FC, useState } from "react";
 import { Button, Card, Col, Modal, Row } from "antd";
 import { useTranslation } from "react-i18next";
 
-import products from '@/db/products.json';
+import dbProducts from '@/db/products.json';
 import { headerMenuItems } from "@/config/constants";
 import Product from "@/pages/Products";
 
-export type TProduct = typeof products[0];
+export type TProduct = typeof dbProducts[0];
 
 export const Catalog = () => {
     const { i18n } = useTranslation();
@@ -40,7 +40,7 @@ export const Catalog = () => {
                 </div>
                 <div className='catalog'>
                     <Row gutter={[16, 16]}>
-                        {products.map(product => (
+                        {dbProducts.map(product => (
                             <Col 
                                 key={product.id} 
                                 xs={{ flex: '100%' }}
@@ -54,7 +54,7 @@ export const Catalog = () => {
                     </Row>
                 </div>
             </div>
-            <div className="bg-orange-1" style={{ height: 50 }}></div>
+            <div className="bg-orange-1" style={{ height: 10 }}></div>
         </div>
     )
 }

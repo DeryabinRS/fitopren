@@ -23,7 +23,7 @@ const Delivery = () => {
                     width: '100%',
                     maxWidth: 1300,
                     margin: '0 auto',
-                    padding: '20px 0',
+                    padding: '0 0 20px',
                 }}>
                     <div 
                         style={{
@@ -88,7 +88,7 @@ const Delivery = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-green-1" style={{ height: 50 }}></div>
+            <div className="bg-green-1" style={{ height: 10 }}></div>
         </>
     )
 }

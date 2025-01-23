@@ -15,7 +15,6 @@ const Servises = () => {
                 width: '100%',
                 maxWidth: 1300,
                 margin: '0 auto',
-                padding: '0 20px 50px',
             }}>
                 <div 
                     style={{
